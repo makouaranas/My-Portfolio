@@ -58,7 +58,7 @@ section{
 }
 .heading{
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: rgba(32, 32, 32, 0.267);
   font-weight: 800;
   text-align: center;
 }
@@ -88,7 +88,7 @@ header .navbar li{
 }
 header .navbar ul li a{
   font-size: 1.57rem;
-  color: #0E2431;
+  color: #0e24314a;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
@@ -119,7 +119,7 @@ header .navbar ul li a:hover{
     height: 100%;
     text-align: left;
     align-items: flex-start;
-    background-color: #0e0f31;
+    background-color: #272a7e;
   }
   header .navbar ul{
     flex-flow: column;
@@ -158,7 +158,7 @@ header .navbar ul li a:hover{
 /* work section starts */
 .work{
   /* background: #010124; */
-  background: linear-gradient(to bottom, #010136, #00003a);
+  background: linear-gradient(to bottom, #F3D568, #F3D568);
   margin-top: 5rem;
 }
 .work h2{
@@ -166,7 +166,7 @@ header .navbar ul li a:hover{
   padding: 1rem;
 }
 .work .heading span{
-  color: rgb(255, 230, 0);
+  color: #F39068;
 }
 .work .button-group{
   display: flex;
@@ -204,7 +204,7 @@ header .navbar ul li a:hover{
 .work .box-container .box{
   flex:1 1 30rem;
   border-radius: .5rem;
-  box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
+  box-shadow: 0 .7rem 1rem rgba(136, 42, 42, 0.3);
   position: relative;
   overflow:hidden;
   height:30rem;
@@ -233,7 +233,7 @@ header .navbar ul li a:hover{
   height: 4.5rem;
   width: 100%;
   padding-left: 1rem;
-  background: #ffd900;
+  background: #F39068;
 }
 .work .box-container .box .content .tag h3{
   font-size: 2rem;
@@ -263,11 +263,11 @@ header .navbar ul li a:hover{
   border-radius: .5rem;
   font-size: 1.5rem;
   color: #fff;
-  background: rgb(12, 12, 12);
+  background: #F3D568;
   margin-right: 2rem;
 }
 .work .desc .btns .btn:hover{
-  background: #310ae0f5;
+  background: #453c6cf5;
 }
 
 @media screen and (max-width: 450px) {
@@ -342,7 +342,7 @@ header .navbar ul li a:hover{
   padding: 1rem 1.5rem;
   font-size: 2rem;
   background: #ffae00;
-  color: rgb(13, 0, 44);
+  color: rgb(148, 135, 180);
   border-radius: 5rem;
   transition: 1s linear;
   z-index: 1000;

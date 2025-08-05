@@ -71,21 +71,20 @@ function showProjects(projects) {
     // });
     // // vanilla tilt.js  
 
-    // /* ===== SCROLL REVEAL ANIMATION ===== */
+    /* ===== SCROLL REVEAL ANIMATION ===== */
     // const srtop = ScrollReveal({
     //     origin: 'bottom',
     //     distance: '80px',
     //     duration: 1000,
     //     reset: true
     // });
-
     // /* SCROLL PROJECTS */
     // srtop.reveal('.work .box', { interval: 200 });
 
     // isotope filter products
     var $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
+        layoutMode: 'fitRow',
         masonry: {
             columnWidth: 200
         }

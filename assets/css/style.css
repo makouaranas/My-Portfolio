@@ -22,7 +22,7 @@ body {
 }
 
 *::selection {
-  background: #2b3dda;
+  background: #3e4574;
   color: #fff;
 }
 
@@ -34,10 +34,10 @@ html::-webkit-scrollbar {
   width: 0.8rem;
 }
 html::-webkit-scrollbar-track {
-  background: rgb(235, 202, 245);
+  background:#F3D568 ;
 }
 html::-webkit-scrollbar-thumb {
-  background: #420177;
+  background: #F39068;
 }
 
 /* pre loader start */
@@ -79,7 +79,7 @@ section {
 }
 .heading {
   font-size: 3.5rem;
-  color: rgb(32, 32, 32);
+  color: #F39068;
   font-weight: 800;
   text-align: center;
 }
@@ -109,7 +109,7 @@ header .navbar li {
 }
 header .navbar ul li a {
   font-size: 1.57rem;
-  color: #0e2431;
+  color: #0a1a23;
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.04rem;
@@ -117,8 +117,8 @@ header .navbar ul li a {
 }
 header .navbar ul li a.active,
 header .navbar ul li a:hover {
-  color: #011aff;
-  border-bottom: 0.2rem solid #011aff;
+  color: #F39068;
+  border-bottom: 0.2rem solid #F39068;
   padding: 0.5rem 0;
 }
 /* navbar ends */
@@ -142,7 +142,7 @@ header .navbar ul li a:hover {
     height: 100%;
     text-align: left;
     align-items: flex-start;
-    background-color: #0e0f31;
+    background-color: #cfb55a;
   }
   header .navbar ul {
     flex-flow: column;
@@ -167,7 +167,7 @@ header .navbar ul li a:hover {
     padding: 1rem;
     color: #fff;
     border-radius: 0.5rem;
-    border-bottom: 0.5rem solid #011aff;
+    border-bottom: 0.5rem solid #cfb55a;
   }
   .fa-times {
     transform: rotate(180deg);
@@ -239,7 +239,7 @@ header .navbar ul li a:hover {
 }
 .home .content p span {
   font-size: 2.5rem;
-  color: rgb(148, 8, 8);
+  color: #F39068;
   font-weight: 600;
   padding: 1rem 0;
 }
@@ -251,8 +251,8 @@ header .navbar ul li a:hover {
   border-radius: 4em;
   transition: 0.5s;
   color: #fff;
-  background: #2506ad;
-  box-shadow: 0px 5px 18px rgba(48, 68, 247, 0.6);
+  background: #F39068;
+  box-shadow: 0px 5px 18px #F39068;
   font-family: "Nunito", sans-serif;
 }
 .home .btn span {
@@ -266,7 +266,8 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .home .btn:hover {
-  background: #1a047e;
+  background:#F3D568 ;
+  box-shadow: 0px 5px 18px #F3D568;
 }
 .home .btn:hover i {
   transform: translateX(5px);
@@ -289,8 +290,9 @@ header .navbar ul li a:hover {
   font-size: 2rem;
   display: inline-block;
   line-height: 44px;
-  color: #00d9ff;
-  background-color: #09011b;
+  color: #cfb55a;
+   box-shadow: 0px 5px 18px #4d4420;
+  background-color: #cfb65a2b;
   width: 44px;
   height: 44px;
   text-align: center;
@@ -404,17 +406,17 @@ header .navbar ul li a:hover {
   text-transform: none;
 }
 .about .row .content .box-container .box p span {
-  color: #011aff;
+  color: #282933;
 }
 .resumebtn {
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 .resumebtn .btn {
   padding: 1.7rem 3rem;
-  border-radius: 0.5em;
+  border-radius: 0.9em;
   transition: 0.3s;
   color: #fff;
-  background: #2506ad;
+  background: #4848ef;
   box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
   font-family: "Nunito", sans-serif;
 }
@@ -429,7 +431,7 @@ header .navbar ul li a:hover {
   transition: 0.3s;
 }
 .resumebtn .btn:hover {
-  background: #1a047e;
+  background: #654ecc;
 }
 .resumebtn .btn:hover i {
   transform: translateX(5px);
@@ -461,16 +463,16 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #57059e, #4a00e0);
+  background: linear-gradient(to bottom,#F3D568, #f9de7e);
 }
 .skills h2 {
   color: #fff;
 }
 .skills .heading span {
-  color: rgb(255, 230, 0);
+  color: #F39068;
 }
 .skills .container {
-  background: rgba(0, 0, 22, 0.4);
+  background: rgba(0, 0, 22, 0.132);
   color: #fff;
   border-radius: 1rem;
   padding: 2rem;
@@ -489,12 +491,12 @@ header .navbar ul li a:hover {
   padding: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 22, 0.9);
+  background: #CBF36814;
   transition: 0.2s;
 }
 .skills .container .bar:hover {
-  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.33) !important;
+  background-color:#f38f6819 !important;
 }
 .skills .container .bar .info {
   display: flex;
@@ -588,7 +590,7 @@ header .navbar ul li a:hover {
 }
 .education .box-container .box .content h3 {
   font-size: 2.5rem;
-  color: #012970;
+  color: #5b7eb9;
   padding: 0.5rem 0;
   font-weight: 600;
   text-align: left;
@@ -769,7 +771,7 @@ header .navbar ul li a:hover {
   content: "";
   position: absolute;
   width: 6px;
-  background: #020133;
+  background: #141357;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -1091,7 +1093,7 @@ form .button-area {
 .footer {
   min-height: auto;
   padding-top: 0;
-  background: rgb(0, 1, 43);
+  background: #F39068;
 }
 .footer .box-container {
   display: flex;
@@ -1214,7 +1216,7 @@ form .button-area {
   padding: 1rem 1.5rem;
   font-size: 2rem;
   background: #ffae00;
-  color: rgb(13, 0, 44);
+  color: #F39068;
   border-radius: 50%;
   transition: 1s linear;
   z-index: 1000;
