@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "Desktop App", "Testing"],
+    strings: ["frontend development", "backend development", "web designing", "Desktop App", "Penetration Tester"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -249,3 +249,20 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    const scrollPosition = window.scrollY;
+    const triggerPosition = window.innerHeight * 0.2; // 20% of viewport height
+
+    if (scrollPosition > triggerPosition) {
+        header.classList.add('scrolled');
+        // Gradually increase blur based on scroll position
+        const blurValue = Math.min((scrollPosition - triggerPosition) / 100, 15);
+        header.style.backdropFilter = `blur(${blurValue}px)`;
+    } else {
+        header.classList.remove('scrolled');
+        header.style.backdropFilter = 'blur(0px)';
+    }
+});
