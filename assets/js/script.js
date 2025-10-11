@@ -55,6 +55,118 @@ $(document).ready(function () {
     // <!-- emailjs to mail contact form data -->
 
 });
+// Mobile menu toggle
+        const menu = document.getElementById('menu');
+        const navbar = document.getElementById('navbar');
+        
+        menu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            menu.classList.toggle('fa-times');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                menu.classList.remove('fa-times');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                document.getElementById('header').classList.add('scrolled');
+            } else {
+                document.getElementById('header').classList.remove('scrolled');
+            }
+
+            // Active nav link on scroll
+            const sections = document.querySelectorAll('section');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.navbar a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+
+            // Scroll top button
+            const scrollTop = document.getElementById('scroll-top');
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll top functionality
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Simple typing effect
+        const typedText = document.getElementById('typed-text');
+        const texts = ['Full Stack Development', 'Web Designing', 'Desktop Apps', 'Penetration Testing'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typedText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 100;
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        typeWriter();
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            e.target.reset();
+        });
 
 document.addEventListener('visibilitychange',
     function () {
