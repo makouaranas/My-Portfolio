@@ -1,13 +1,32 @@
 [
-  {
-    "name": "NotyStack Android",
-    "desc": "Fully fledged android CRUD app based on different design patterns. Built using Java, XML, SQLite, Firebase, RoomDB, MVVM.",
-    "image": "notystackandroid",
-    "category": "android",
-    "links": {
-      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
-      "code": "https://github.com/jigar-sable/notystack-android"
+    {
+        "name": "Portfolio Website",
+        "desc": "Personal portfolio website with chatbot integration using OpenRouter API. Built with HTML, CSS, JavaScript.",
+        "image": "portfolio",
+        "category": "web",
+        "links": {
+            "view": "https://makouaranas.github.io/My-Portfolio/",
+            "code": "https://github.com/makouaranas/My-Portfolio"
+        }
+    },
+    {
+        "name": "E-commerce Website",
+        "desc": "Full-stack e-commerce platform with user authentication and payment integration. Built using React, Node.js, MongoDB.",
+        "image": "ecommerce",
+        "category": "web",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
+        "name": "Task Manager App",
+        "desc": "A task management application with real-time updates and collaboration features. Uses React, Firebase, and Material-UI.",
+        "image": "taskmanager",
+        "category": "web",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
     }
-  }
-  
 ]

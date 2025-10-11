@@ -37,6 +37,66 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
+    // Fetch and display skills
+    async function fetchSkills() {
+        try {
+            console.log('Fetching skills...');
+            const response = await fetch('/skills.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const skills = await response.json();
+            console.log('Skills loaded:', skills);
+            return skills;
+        } catch (error) {
+            console.error('Error fetching skills:', error);
+            return [];
+        }
+    }
+
+    // Display skills in the container
+    async function displaySkills() {
+        const skillsContainer = document.getElementById('skillsContainer');
+        if (!skillsContainer) {
+            console.error('Skills container not found!');
+            return;
+        }
+
+        console.log('Loading skills...');
+        const skills = await fetchSkills();
+        
+        if (skills.length === 0) {
+            skillsContainer.innerHTML = '<p>No skills found</p>';
+            return;
+        }
+
+        const skillsHTML = skills.map(skill => `
+            <div class="skill-card">
+                <img src="${skill.icon}" alt="${skill.name}" />
+                <span>${skill.name}</span>
+            </div>
+        `).join('');
+
+        skillsContainer.innerHTML = skillsHTML;
+        console.log('Skills loaded successfully!');
+
+        // Add hover animations
+        const cards = document.querySelectorAll('.skill-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    }
+
+    // Initialize skills when document is ready
+    $(document).ready(function() {
+        displaySkills();
+    });
+
     // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
         emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");

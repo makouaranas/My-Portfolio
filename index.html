@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Anas MAKOUAR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href ="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/skills.css">
+    <link rel="stylesheet" href="./assets/css/chatbot.css">
+    <link rel="stylesheet" href="./assets/css/projects.css">
     <link id='favicon' rel="shortcut icon" href="./assets/images/myPicture.jpg" type="image/x-png">
 </head>
 <body>
@@ -75,39 +78,8 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-react"></i>
-                <span>React</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-node"></i>
-                <span>Node.js</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <span>Python</span>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <span>MongoDB</span>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-git-alt"></i>
-                <span>Git</span>
-            </div>
+        <div class="skills-grid" id="skillsContainer">
+            <!-- Skills will be loaded dynamically from skills.json -->
         </div>
     </section>
 
@@ -118,7 +90,7 @@
         <div class="education-grid">
             <div class="education-card">
                 <div class="image">
-                    <img src="https://via.placeholder.com/250x200/667eea/ffffff?text=FST" alt="FST Fes">
+                    <img src="./assets/images/educat/FST-Fes.png" alt="FST Fes">
                 </div>
                 <div class="content">
                     <h3>Master in Electrical Engineering and Embedded Systems</h3>
@@ -128,7 +100,7 @@
             </div>
             <div class="education-card">
                 <div class="image">
-                    <img src="https://via.placeholder.com/250x200/764ba2/ffffff?text=EST" alt="EST Sale">
+                    <img src="./assets/images/educat/imageESTSale.webp" alt="EST Sale">
                 </div>
                 <div class="content">
                     <h3>Licentiate in Diagnostic and Maintenance of Embedded Systems</h3>
@@ -138,7 +110,7 @@
             </div>
             <div class="education-card">
                 <div class="image">
-                    <img src="https://via.placeholder.com/250x200/667eea/ffffff?text=EST" alt="EST Beni Mellal">
+                    <img src="./assets/images/educat/EST_Beni_mellal.jpg" alt="EST Beni Mellal">
                 </div>
                 <div class="content">
                     <h3>Maintenance of Electromechanical Systems</h3>
@@ -149,34 +121,12 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-        <div class="contact-container">
-            <div class="contact-img">
-                <img src="https://via.placeholder.com/500x400/667eea/ffffff?text=Contact+Me" alt="Contact">
-            </div>
-            <form id="contact-form">
-                <div class="field">
-                    <input type="text" placeholder="Name" required>
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="field">
-                    <input type="email" placeholder="Email" required>
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="field">
-                    <input type="tel" placeholder="Phone">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="field message">
-                    <textarea placeholder="Message" required></textarea>
-                    <i class="fas fa-comment-dots"></i>
-                </div>
-                <button type="submit" class="submit-btn">
-                    Submit <i class="fa fa-paper-plane"></i>
-                </button>
-            </form>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="heading"><i class="fas fa-laptop-code"></i> My <span>Projects</span></h2>
+        <p class="quote">Here are some of my recent projects that showcase my skills and experience.</p>
+        <div class="projects-container" id="projects-container">
+            <!-- Projects will be loaded dynamically from projects.json -->
         </div>
     </section>
 
@@ -217,6 +167,45 @@
         <i class="fas fa-angle-up"></i>
     </div>
 
-    <script src="./assets/js/script.js" ></script>
+    <!-- Projects Script -->
+    <script src="./assets/js/projects.js"></script>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <!-- Chatbot Trigger Button -->
+        <div class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-comments"></i>
+        </div>
+
+        <!-- Chatbot Interface -->
+        <div class="chatbot-box" id="chatbotBox">
+            <div class="chatbot-header">
+                <h3>Chat Assistant</h3>
+                <button class="close-btn" id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- Messages will be added here dynamically -->
+                <div class="message bot-message">
+                    <i class="fas fa-robot"></i>
+                    <p>Hi! I'm Anas's assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom Script -->
+    <script src="./assets/js/script.js"></script>
+    <!-- Chatbot Script -->
+    <script src="./assets/js/chatbot.js"></script>
 </body>
 </html>

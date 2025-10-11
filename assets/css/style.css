@@ -144,8 +144,8 @@
         
         .home .content h2 span {
             color: var(--primary);
-            display: block;
-            margin-top: 1rem;
+            display: inline;
+            margin-left: 0.5rem;
         }
         
         .home .content p {
