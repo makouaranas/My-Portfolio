@@ -9,16 +9,16 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/myPicture.jpg" type="image/x-png">
+    <link id='favicon' rel="shortcut icon" href="./assets/images/myPicture.jpg" type="image/jpeg">
     <title>Portfolio | Anas MAKOUAR</title>
 </head>
 <body oncontextmenu="return false">
 
 <!-- pre loader -->
 <!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
+  <img draggable="false" src="./assets/images/preloader.gif" alt="Loading...">
 </div> -->
 
 <!-- navbar starts -->
@@ -53,14 +53,14 @@
     </a>
     <div class="socials">
         <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="http://linkedin.com/in/anas-makouar-817619217/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/makouaranas/" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="telegram" aria-label="Telegram" href="https://t.me/makouaranass" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+          <li><a class="linkedin" aria-label="LinkedIn Profile" href="http://linkedin.com/in/anas-makouar-817619217/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li> 
+          <li><a class="github" aria-label="GitHub Profile" href="https://github.com/makouaranas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+          <li><a class="telegram" aria-label="Telegram Profile" href="https://t.me/makouaranass" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a></li>
         </ul>
       </div>
     </div>
 <div class="image">
-    <img loading="lazy" draggable="false" class="tilt" src="./assets/images/myCartoonImage.png" alt="">
+    <img loading="lazy" draggable="false" class="tilt" src="./assets/images/myCartoonImage.png" alt="Anas Makouar Cartoon Portrait">
 </div>
 </section>
 <!-- hero section ends -->
@@ -73,7 +73,7 @@
   <div class="row">
 
     <div class="image">
-      <img loading="lazy" draggable="false" class="tilt" src="./assets/images/myPicture.jpg" alt="Anas Makouar Picture">
+      <img loading="lazy" draggable="false" class="tilt" src="./assets/images/myPicture.jpg" alt="Anas Makouar Professional Photo">
     </div>
 
     <div class="content">
@@ -104,7 +104,7 @@
       </div>
       
       <div class="resumebtn">
-        <a href="https://drive.google.com/file/d/17ThqXpWdXaozrftMjcO7eIVS7UkW1WMj/view" target="_blank" class="btn">
+        <a href="https://drive.google.com/file/d/17ThqXpWdXaozrftMjcO7eIVS7UkW1WMj/view" target="_blank" rel="noopener noreferrer" class="btn">
           <span>Resume</span>
           <i class="fas fa-chevron-right"></i>
         </a>
@@ -124,12 +124,7 @@
     <div class="container">
           <div class="row" id="skillsContainer">
 
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
+            <!-- Dynamic skills loaded via JS -->
 
       </div>
 </div>
@@ -147,7 +142,7 @@
     <div class="box-container">
       <div class="box">
         <div class="image">
-        <img loading="lazy" draggable="false" src="./assets/images/educat/FST-Fes.png" alt="">
+        <img loading="lazy" draggable="false" src="./assets/images/educat/FST-Fes.png" alt="FST Fes Logo">
         </div>
         <div class="content">
         <h3>Master in Electrical Engineering and Embedded Systems</h3>
@@ -158,7 +153,7 @@
 
     <div class="box">
         <div class="image">
-        <img loading="lazy" draggable="false" src="./assets/images/educat/imageESTSale.webp" alt="">
+        <img loading="lazy" draggable="false" src="./assets/images/educat/imageESTSale.webp" alt="EST Sale Logo">
         </div>
         <div class="content">
         <h3>Licentiate in diagnostic and maintenance of embedded systems in automotive</h3>
@@ -169,7 +164,7 @@
 
     <div class="box">
       <div class="image">
-      <img loading="lazy" draggable="false" src="./assets/images/educat/EST_Beni_mellal.jpg" alt="">
+      <img loading="lazy" draggable="false" src="./assets/images/educat/EST_Beni_mellal.jpg" alt="EST Beni Mellal Logo">
       </div>
       <div class="content">
       <h3>Maintenance of electromechanical systems </h3>
@@ -194,6 +189,10 @@
   <a href="/projects" class="btn"><span>View All</span>
     <i class="fas fa-arrow-right"></i>
 </a>
+</div>
+
+<div class="box-container" id="projectsContainer">
+  <!-- Dynamic projects loaded via JS -->
 </div>
 
 </section>
@@ -285,8 +284,6 @@
   </a>
   </div>
 
-</div>
-
 </section>
 <!-- experience section ends -->
 
@@ -298,25 +295,25 @@
   <div class="container">
     <div class="content">
       <div class="image-box">
-        <img loading="lazy" draggable="false" src="./assets/images/contact1.png" alt="">
+        <img loading="lazy" draggable="false" src="./assets/images/contact1.png" alt="Contact Illustration">
       </div>
     <form id="contact-form">
       
       <div class="form-group">
         <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
+          <input type="tel" name="phone" placeholder="Your Phone">
           <i class='fas fa-phone-alt'></i>
         </div>
         <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
+        <textarea placeholder="Your Message" name="message" required aria-label="Your Message"></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
         </div>
@@ -358,11 +355,11 @@
           <p> <i class="fas fa-map-marked-alt"></i>Tanger, Marocco-50030</p>
           <div class="share">
 
-              <a href="https://www.linkedin.com/in/anas-makouar-817619217" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/makouaranass" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:makouaranass@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://twitter.com/anas_makouar" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
-              <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
+              <a href="https://www.linkedin.com/in/anas-makouar-817619217" class="fab fa-linkedin" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer"></a>
+              <a href="https://github.com/makouaranass" class="fab fa-github" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer"></a>
+              <a href="mailto:makouaranass@gmail.com" class="fas fa-envelope" aria-label="Email Anas" target="_blank" rel="noopener noreferrer"></a>
+              <a href="https://twitter.com/anas_makouar" class="fab fa-twitter" aria-label="Twitter Profile" target="_blank" rel="noopener noreferrer"></a>
+              <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" aria-label="Telegram Profile" target="_blank" rel="noopener noreferrer"></a>
           </div>
       </div>
   </div>
@@ -374,35 +371,20 @@
 
 
 <!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+<a href="#home" aria-label="Scroll to Top" class="fas fa-angle-up" id="scroll-top"></a>
 <!-- scroll back to top -->
 
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
 <!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyT3GIQ2psstE3kUdU8vS2JZFIVni/iyIXC7U4qahQY9V0K77==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-+Ax0Y6kMCQq0M5O7aQPhkEzw5q9sPqyL2mDq8Q0M1L1F0GHYeHBZ6p7M9sM2iZ9f2O4G5C1oq8Dq0M1L1F0GHYe==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- particle.js links -->
 <script src="./assets/js/particles.min.js"></script>
 <script src="./assets/js/app.js"></script>
 
 <!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-
-</body>
-</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-8A3DNPAoR+6z0i0gG1K9M1s4QfK9J2q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o3q0q7q4o
