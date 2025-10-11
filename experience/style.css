@@ -12,7 +12,7 @@
     --color-text-dark: #ffffff; /* White text for high contrast */
     --color-white: #ffffff; /* Explicit white for consistency */
 }
-
+ 
 * {
   margin: 0;
   padding: 0;

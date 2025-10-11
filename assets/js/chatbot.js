@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (!config.OPENAI_API_KEY) {
                 throw new Error('API key not found in config');
-            }
+            } 
 
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',

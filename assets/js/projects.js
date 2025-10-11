@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         projects.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
-            
+             
             projectCard.innerHTML = `
                 <div class="project-image">
                     <img src="./assets/images/projects/${project.image}.png" 

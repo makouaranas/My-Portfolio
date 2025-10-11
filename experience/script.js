@@ -16,7 +16,7 @@ $(document).ready(function(){
         }
     });
 });
-
+ 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
     origin: 'top',

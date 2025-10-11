@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Email: ${formData.email}
             Phone: ${formData.phone}
             Message: ${formData.message}
-        `;
-
+        `; 
         // Create mailto link
         const mailtoLink = `mailto:makouaranass@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(emailContent)}`;
         

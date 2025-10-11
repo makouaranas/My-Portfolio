@@ -15,7 +15,7 @@ $(document).ready(function () {
             document.querySelector('#scroll-top').classList.remove('active');
         }
     });
-});
+}); 
 
 document.addEventListener('visibilitychange',
     function () {

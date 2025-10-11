@@ -139,7 +139,7 @@ $(document).ready(function () {
             } else {
                 document.getElementById('header').classList.remove('scrolled');
             }
-
+ 
             // Active nav link on scroll
             const sections = document.querySelectorAll('section');
             let current = '';
