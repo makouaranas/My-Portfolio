@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('userInput');
     const sendMessage = document.getElementById('sendMessage');
     const chatbotMessages = document.getElementById('chatbotMessages');
+    const config = { OPENAI_API_KEY: "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" };
 
     // Chat context to maintain conversation history
     let chatContext = [
