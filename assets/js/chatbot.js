@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${config.OPENAI_API_KEY}`,
+                    'Authorization': `Bearer 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`,
                     'HTTP-Referer': window.location.href, // Required by OpenRouter
                     'X-Title': 'Portfolio Chatbot' // Optional - shows in OpenRouter dashboard
                 },
