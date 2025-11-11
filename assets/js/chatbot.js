@@ -109,9 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get AI response using OpenRouter API
     async function getAIResponse() {
         try {
-            // Load API key from config
-            const config = await fetch('config.json').then(res => res.json());
-            
+            // Load API key from config            
             if (!config.OPENAI_API_KEY) {
                 throw new Error('API key not found in config');
             } 
