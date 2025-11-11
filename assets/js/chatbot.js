@@ -1,4 +1,4 @@
-// Chatbot with AI integration
+// Chatbot with AI integration - FIXED VERSION
 document.addEventListener('DOMContentLoaded', function() {
     const chatbotButton = document.getElementById('chatbotButton');
     const chatbotBox = document.getElementById('chatbotBox');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendMessage = document.getElementById('sendMessage');
     const chatbotMessages = document.getElementById('chatbotMessages');
     
-    // API Configuration
+    // API Key
     const API_KEY = "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";
 
     // Chat context to maintain conversation history
@@ -42,30 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function sendUserMessage() {
         const message = userInput.value.trim();
         if (message !== '') {
-            // Add user message to UI
             addMessage('user', message);
             
-            // Add user message to context
             chatContext.push({
                 role: "user",
                 content: message
             });
             
-            // Clear input
             userInput.value = '';
-            
-            // Show typing indicator
             showTypingIndicator();
-            
-            // Get AI response
             getAIResponse();
         }
     }
 
-    // Send message on button click
     sendMessage.addEventListener('click', sendUserMessage);
 
-    // Send message on Enter key
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             sendUserMessage();
@@ -87,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.appendChild(messageText);
         chatbotMessages.appendChild(messageDiv);
         
-        // Scroll to bottom
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
 
@@ -111,86 +101,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get AI response using OpenRouter API
     async function getAIResponse() {
         try {
+            console.log('Sending request to OpenRouter...');
+            
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${API_KEY}`,
-                    'HTTP-Referer': window.location.href,
+                    'HTTP-Referer': window.location.origin,
                     'X-Title': 'Portfolio Chatbot'
                 },
                 body: JSON.stringify({
                     model: "openai/gpt-3.5-turbo",
-                    messages: chatContext,
-                    max_tokens: 150,
-                    temperature: 0.7,
-                    top_p: 1.0,
-                    frequency_penalty: 0,
-                    presence_penalty: 0
+                    messages: chatContext
                 })
             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('OpenRouter API Error:', errorData);
-                throw new Error(`API error: ${errorData.error?.message || 'Unknown error'}`);
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+
+            // Check if response is JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const textResponse = await response.text();
+                console.error('Non-JSON response:', textResponse);
+                throw new Error('Received HTML instead of JSON. API may be down or key is invalid.');
             }
 
             const data = await response.json();
+            console.log('API Response:', data);
+
+            if (!response.ok) {
+                console.error('API Error:', data);
+                throw new Error(data.error?.message || `API returned status ${response.status}`);
+            }
             
-            // Remove typing indicator
             removeTypingIndicator();
 
-            if (data.choices && data.choices[0]) {
+            if (data.choices && data.choices[0] && data.choices[0].message) {
                 const aiResponse = data.choices[0].message.content;
                 
-                // Add AI response to context
                 chatContext.push({
                     role: "assistant",
                     content: aiResponse
                 });
                 
-                // Add AI response to UI
                 addMessage('bot', aiResponse);
             } else {
+                console.error('Invalid response structure:', data);
                 throw new Error('Invalid API response structure');
             }
         } catch (error) {
-            console.error('Error details:', {
-                message: error.message,
-                stack: error.stack
-            });
-            
+            console.error('Full error:', error);
             removeTypingIndicator();
             
-            // Provide more specific error messages
-            if (error.message.includes('API key')) {
-                addMessage('bot', 'Configuration error: API key is missing or invalid. Please contact the administrator.');
-            } else if (error.message.includes('fetch') || error.message.includes('NetworkError')) {
-                addMessage('bot', 'Network error: Unable to reach the AI service. Please check your internet connection.');
-            } else if (error.message.includes('Invalid API response')) {
-                addMessage('bot', 'Processing error: Received unexpected response from AI service. Please try again.');
+            let errorMessage = 'Sorry, I encountered an error. ';
+            
+            if (error.message.includes('HTML') || error.message.includes('JSON')) {
+                errorMessage += 'The API key might be invalid or expired. Please check the console for details.';
+            } else if (error.message.includes('Failed to fetch')) {
+                errorMessage += 'Cannot connect to the AI service. Please check your internet connection.';
             } else {
-                addMessage('bot', `I apologize, but I encountered an error. Please try again later.`);
+                errorMessage += error.message;
             }
+            
+            addMessage('bot', errorMessage);
         }
 
-        // Limit context size to prevent token limit issues
+        // Limit context size
         if (chatContext.length > 10) {
             chatContext = [
-                chatContext[0], // Keep system message
-                ...chatContext.slice(-9) // Keep last 9 messages
+                chatContext[0],
+                ...chatContext.slice(-9)
             ];
         }
     }
-
-    // Error handling for network issues
-    window.addEventListener('offline', () => {
-        addMessage('bot', 'I apologize, but I\'ve lost my internet connection. Please check your connection and try again.');
-    });
 });
 
-// Add typing indicator animation styles
+// Add typing animation
 const style = document.createElement('style');
 style.textContent = `
     .typing-indicator p {
