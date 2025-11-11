@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('userInput');
     const sendMessage = document.getElementById('sendMessage');
     const chatbotMessages = document.getElementById('chatbotMessages');
-    const config = { OPENAI_API_KEY: "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" };
+    
+    // API Configuration
+    const API_KEY = "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";
 
     // Chat context to maintain conversation history
     let chatContext = [
@@ -109,21 +111,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get AI response using OpenRouter API
     async function getAIResponse() {
         try {
-            // Load API key from config            
-            if (!config.OPENAI_API_KEY) {
-                throw new Error('API key not found in config');
-            } 
-
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer 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`,
-                    'HTTP-Referer': window.location.href, // Required by OpenRouter
-                    'X-Title': 'Portfolio Chatbot' // Optional - shows in OpenRouter dashboard
+                    'Authorization': `Bearer ${API_KEY}`,
+                    'HTTP-Referer': window.location.href,
+                    'X-Title': 'Portfolio Chatbot'
                 },
                 body: JSON.stringify({
-                    model: "openai/gpt-3.5-turbo", // You can change this to any supported model
+                    model: "openai/gpt-3.5-turbo",
                     messages: chatContext,
                     max_tokens: 150,
                     temperature: 0.7,
@@ -135,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                console.error('OpenAI API Error:', errorData);
+                console.error('OpenRouter API Error:', errorData);
                 throw new Error(`API error: ${errorData.error?.message || 'Unknown error'}`);
             }
 
@@ -161,8 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error details:', {
                 message: error.message,
-                stack: error.stack,
-                response: error.response
+                stack: error.stack
             });
             
             removeTypingIndicator();
@@ -170,12 +166,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Provide more specific error messages
             if (error.message.includes('API key')) {
                 addMessage('bot', 'Configuration error: API key is missing or invalid. Please contact the administrator.');
-            } else if (error.message.includes('fetch')) {
+            } else if (error.message.includes('fetch') || error.message.includes('NetworkError')) {
                 addMessage('bot', 'Network error: Unable to reach the AI service. Please check your internet connection.');
-            } else if (error.toString().includes('Invalid API response')) {
+            } else if (error.message.includes('Invalid API response')) {
                 addMessage('bot', 'Processing error: Received unexpected response from AI service. Please try again.');
             } else {
-                addMessage('bot', `I apologize, but I encountered an error: ${error.message}`);
+                addMessage('bot', `I apologize, but I encountered an error. Please try again later.`);
             }
         }
 
@@ -213,3 +209,4 @@ style.textContent = `
         66% { content: '...'; }
     }
 `;
+document.head.appendChild(style);
