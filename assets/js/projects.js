@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         // Fetch projects data
-        const response = await fetch('./projects/projects.json');
+        const response = await fetch('./assets/data/projects.json');
         const projects = await response.json();
 
         // Get projects container
