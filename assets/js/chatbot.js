@@ -1,14 +1,14 @@
 // Chatbot with AI integration - FIXED VERSION
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const chatbotButton = document.getElementById('chatbotButton');
     const chatbotBox = document.getElementById('chatbotBox');
     const closeChatbot = document.getElementById('closeChatbot');
     const userInput = document.getElementById('userInput');
     const sendMessage = document.getElementById('sendMessage');
     const chatbotMessages = document.getElementById('chatbotMessages');
-    
+
     // API Key
-    const API_KEY = "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";
+    const API_KEY = "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";
 
     // Chat context to maintain conversation history
     let chatContext = [
@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = userInput.value.trim();
         if (message !== '') {
             addMessage('user', message);
-            
+
             chatContext.push({
                 role: "user",
                 content: message
             });
-            
+
             userInput.value = '';
             showTypingIndicator();
             getAIResponse();
@@ -67,17 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function addMessage(type, text) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}-message`;
-        
+
         const icon = document.createElement('i');
         icon.className = type === 'user' ? 'fas fa-user' : 'fas fa-robot';
-        
+
         const messageText = document.createElement('p');
         messageText.textContent = text;
-        
+
         messageDiv.appendChild(icon);
         messageDiv.appendChild(messageText);
         chatbotMessages.appendChild(messageDiv);
-        
+
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function getAIResponse() {
         try {
             console.log('Sending request to OpenRouter...');
-            
+
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -135,17 +135,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('API Error:', data);
                 throw new Error(data.error?.message || `API returned status ${response.status}`);
             }
-            
+
             removeTypingIndicator();
 
             if (data.choices && data.choices[0] && data.choices[0].message) {
                 const aiResponse = data.choices[0].message.content;
-                
+
                 chatContext.push({
                     role: "assistant",
                     content: aiResponse
                 });
-                
+
                 addMessage('bot', aiResponse);
             } else {
                 console.error('Invalid response structure:', data);
@@ -154,9 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Full error:', error);
             removeTypingIndicator();
-            
+
             let errorMessage = 'Sorry, I encountered an error. ';
-            
+
             if (error.message.includes('HTML') || error.message.includes('JSON')) {
                 errorMessage += 'The API key might be invalid or expired. Please check the console for details.';
             } else if (error.message.includes('Failed to fetch')) {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 errorMessage += error.message;
             }
-            
+
             addMessage('bot', errorMessage);
         }
 
