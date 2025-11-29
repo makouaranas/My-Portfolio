@@ -1,0 +1,12 @@
+# Sensitive Files
+test_api_model.py
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS
+.DS_Store
+Thumbs.db

@@ -41,7 +41,10 @@
             padding: 1.7rem 10%;
             background: transparent;
             transition: all 0.3s ease;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 4px 30px var(--shadow);
         }
+
         
         header.scrolled {
             background: rgba(255, 255, 255, 0.95);
@@ -62,7 +65,7 @@
         .logo i {
             color: var(--primary);
         }
-        
+
         .navbar ul {
             display: flex;
             list-style: none;

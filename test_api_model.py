@@ -1,7 +1,25 @@
 import requests
 import json
 
-API_KEY = "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"
+import os
+
+# Try to load from .env file manually if python-dotenv is not available
+def load_env():
+    try:
+        with open('.env', 'r') as f:
+            for line in f:
+                if line.strip() and not line.startswith('#'):
+                    key, value = line.strip().split('=', 1)
+                    os.environ[key] = value
+    except FileNotFoundError:
+        pass
+
+load_env()
+
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+if not API_KEY:
+    print("Error: OPENROUTER_API_KEY not found in .env or environment variables.")
+    exit(1)
 
 headers = {
     "Authorization": f"Bearer {API_KEY}",

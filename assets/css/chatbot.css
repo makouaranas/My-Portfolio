@@ -6,7 +6,7 @@
     z-index: 1000;
     font-family: 'Poppins', sans-serif;
 }
- 
+
 /* Chatbot Trigger Button */
 .chatbot-button {
     width: 60px;
@@ -34,31 +34,32 @@
 /* Chatbot Box */
 .chatbot-box {
     position: absolute;
-    bottom: 80px;
+    bottom: 20px;
     left: 0;
-    width: 300px;
-    background: white;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     display: none;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 .chatbot-box.active {
     display: flex;
     flex-direction: column;
-    animation: slideUp 0.3s ease forwards;
+    animation: slideUp 0.5s ease-in-out forwards;
 }
 
 /* Chatbot Header */
 .chatbot-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eeae7 0%, #764ba2e7 100%);
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.822);
 }
 
 .chatbot-header h3 {
@@ -70,78 +71,141 @@
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.89);
     cursor: pointer;
     font-size: 18px;
     padding: 5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .close-btn:hover {
     transform: rotate(90deg);
+    color: rgba(255, 166, 166, 0.89);
 }
 
-/* Chatbot Messages */
+/* Chatbot Messages Area */
 .chatbot-messages {
     padding: 15px;
     height: 300px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
+/* Message Container */
 .message {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 10px;
     max-width: 85%;
     animation: fadeIn 0.3s ease;
 }
 
+/* Bot Message (Left) */
 .bot-message {
     align-self: flex-start;
+    flex-direction: row;
 }
 
+/* User Message (Right) */
 .user-message {
     align-self: flex-end;
     flex-direction: row-reverse;
 }
 
+/* Icons */
 .message i {
     width: 30px;
     height: 30px;
-    background: #f0f0f0;
+    background: #f0f0f0bd;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #666;
+    color: #666666a6;
+    flex-shrink: 0;
 }
 
-.message p {
-    background: #f0f0f0;
-    padding: 10px 15px;
-    border-radius: 15px;
-    margin: 0;
+/* Message Content Bubble (Base) */
+.message-content {
+    padding: 12px 16px;
+    border-radius: 18px;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.user-message p {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* Bot Bubble Style */
+.bot-message .message-content {
+    background: #fffefe3d;
+    color: #030303c4;
+    border-bottom-left-radius: 4px;
+}
+
+/* User Bubble Style */
+.user-message .message-content {
+    background: linear-gradient(135deg, #667eeae7 0%, #764ba2e7 100%);
     color: white;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 5px rgba(102, 126, 234, 0.3);
 }
 
-/* Chatbot Input */
+/* Remove default margins from paragraphs inside bubbles */
+.message-content p {
+    margin: 0;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 15px 20px !important;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #999;
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typingBounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Chatbot Input Area */
 .chatbot-input {
     padding: 15px;
-    border-top: 1px solid #eee;
+    border-top: 2px solid #eee;
     display: flex;
     gap: 10px;
 }
 
+/* Chatbot Input Field */
 .chatbot-input input {
     flex: 1;
     padding: 10px 15px;
@@ -149,13 +213,17 @@
     border-radius: 25px;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+/* Chatbot Input Focus */
 .chatbot-input input:focus {
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* Chatbot Input Button */
 .chatbot-input button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -172,6 +240,7 @@
 
 .chatbot-input button:hover {
     transform: scale(1.1);
+    background: linear-gradient(120deg, #6b84f5 10%, #ac73e6 100%);
 }
 
 /* Animations */
@@ -180,6 +249,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -190,6 +260,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -220,4 +291,37 @@
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+/* Action Button Style */
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    margin-left: 40px;
+    /* Align with bot message text */
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-button i {
+    font-size: 16px;
+    background: none !important;
+    /* Override default icon bg */
+    width: auto !important;
+    height: auto !important;
+    color: white !important;
 }
